@@ -44,7 +44,7 @@ axios.interceptors.response.use(
   })
 
 /* 地址 */
-const base = 'http://localhost:3000'
+const base = ''
 export const postKeyValueRequest = (url, params) => {
   return axios({
     method: 'post',
@@ -52,7 +52,11 @@ export const postKeyValueRequest = (url, params) => {
     data: params,
     transformRequest: [
       function (data) {
-        console.log(data)
+        let ret = ''
+        for (const i in data) {
+          ret += encodeURIComponent(i) + '=' + encodeURIComponent(data[i]) + '&'
+        }
+        return ret
       }],
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -84,7 +88,7 @@ export const getRequest = (url, params) => {
   })
 }
 
-export const deletRequest = (url, params) => {
+export const deleteRequest = (url, params) => {
   return axios({
     method: 'delete',
     url: `${base}${url}`,

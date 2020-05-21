@@ -66,8 +66,6 @@
 </template>
 
 <script>
-import { getRequest } from '../utils/api'
-
 export default {
   name: 'Login',
   data () {
@@ -79,15 +77,15 @@ export default {
       vcUrl: '',
       loginForm: {
         username: 'admin',
-        password: '123',
+        password: '456',
         code: ''
       },
       rules: {
         username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
         password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
         code: [{ required: true, message: '请输入验证码', trigger: 'blur' }]
-      },
-      checked: true
+      }
+      // checked: true
     }
   },
   methods: {
@@ -96,14 +94,29 @@ export default {
     //   this.vcUrl = '/verifyCode?time=' + new Date()
     // },
     submitLogin () {
+      /* 前端校验 */
       this.$refs.loginForm.validate(valid => {
         if (valid) {
-          console.log(valid)
-          getRequest('/login', this.loginForm).then((result) => {
-            console.log(`getRequest.then: ${result}`)
-          }).catch((err) => {
-            console.log(`getRequest.err: ${err}`)
+          /* 后台登录校验 */
+          this.loading = true
+          console.log(this.loginForm)
+          this.postKeyValueRequest('/doLogin', this.loginForm).then(resp => {
+            this.loading = false
+            if (resp) {
+              // 如果有响应，初始化当前用户
+              this.$store.commit('INIT_CURRENTHR', resp.obj)
+              window.sessionStorage.setItem('user', JSON.stringify(resp.obj))
+              console.log(resp)
+              // 登陆后重定向至当前路由
+              const path = this.$route.query.redirect
+              // 编程式跳转
+              this.$router.replace((path === '/' || path === undefined) ? '/home' : path)
+            } else {
+
+            }
           })
+        } else {
+          return false
         }
       })
     }
