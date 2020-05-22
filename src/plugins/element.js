@@ -2,7 +2,11 @@ import Vue from 'vue'
 import {
   Button, Form, Input, Loading, FormItem,
   Checkbox, Message, Container, Dropdown,
-  DropdownMenu, DropdownItem, Header, Aside, Main, Menu, Submenu, MessageBox, MenuItem, Breadcrumb, BreadcrumbItem, Card, Upload, Tag, Dialog
+  DropdownMenu, DropdownItem, Header, Aside, Main, Menu, Submenu, MessageBox,
+  MenuItem, Breadcrumb, BreadcrumbItem, Card, Upload,
+  Tag, Dialog, Col, Row, Select, RadioGroup, Radio, Popover,
+  Tree, DatePicker, Table, TableColumn, Pagination, Option, Tabs,
+  TabPane, Collapse, CollapseItem, Icon, Switch
 } from 'element-ui'
 
 Vue.use(Button)
@@ -28,6 +32,25 @@ Vue.use(Card)
 Vue.use(Upload)
 Vue.use(Tag)
 Vue.use(Dialog)
+Vue.use(Col)
+Vue.use(Row)
+Vue.use(Select)
+Vue.use(RadioGroup)
+Vue.use(Radio)
+Vue.use(Popover)
+Vue.use(Tree)
+Vue.use(Icon)
+Vue.use(DatePicker)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Pagination)
+Vue.use(Option)
+Vue.use(Tabs)
+Vue.use(TabPane)
+Vue.use(Collapse)
+Vue.use(CollapseItem)
+Vue.use(Switch)
+
 /* 不要use，use了每个页面都蹦 */
 // Vue.use(Message)
 // Vue.use(MessageBox)

@@ -8,7 +8,8 @@ export const initMenu = (router, store) => {
     return
   }
   getRequest('/system/config/menu').then(data => {
-    // 返回的是spring secruity返回来的数据
+    // 返回的是当前hr对应role的所有menu返回来的数据
+    // console.log(data)
     if (data) {
       const fmtRoutes = formatRoutes(data)
       router.addRoutes(fmtRoutes)
@@ -45,11 +46,11 @@ export const formatRoutes = (routes) => {
       meta: meta,
       children: children,
       component (resolve) {
+        // 这个特殊的 `require` 语法将会告诉 webpack自动将你的构建代码切割成多个包，这些包会通过 Ajax 请求加载
+        // https://cn.vuejs.org/v2/guide/components-dynamic-async.html
+        // https://webpack.js.org/api/module-methods/#require-amd-version
+        // resovle是成功后的回调函数
         if (component.startsWith('Home')) {
-          // 这个特殊的 `require` 语法将会告诉 webpack自动将你的构建代码切割成多个包，这些包会通过 Ajax 请求加载
-          // https://cn.vuejs.org/v2/guide/components-dynamic-async.html
-          // https://webpack.js.org/api/module-methods/#require-amd-version
-          // resovle是成功后的回调函数
           require(['../views/' + component + '.vue'], resolve)
         } else if (component.startsWith('Emp')) {
           require(['../views/emp/' + component + '.vue'], resolve)

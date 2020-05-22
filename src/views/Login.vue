@@ -100,7 +100,7 @@ export default {
           /* 后台登录校验 */
           this.loading = true
           console.log(this.loginForm)
-          this.postKeyValueRequest('/doLogin', this.loginForm).then(resp => {
+          this.postRequest('/doLogin', this.loginForm).then(resp => {
             this.loading = false
             if (resp) {
               // 如果有响应，初始化当前用户
