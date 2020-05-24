@@ -44,7 +44,7 @@
           align="left"
         />
         <el-table-column
-          label="所属部门"
+          label="所在套账"
           align="center"
         >
           <template slot-scope="scope">
