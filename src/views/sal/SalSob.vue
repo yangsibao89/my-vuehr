@@ -132,7 +132,7 @@
         </el-steps>
         <el-input
           v-model="salary[title]"
-          :placeholder="'请输入'+salaryItemName[index]+'...'"
+          :placeholder="'请输入'+title+'...'"
           v-for="(value,title,index) in salary"
           :key="index"
           v-show="activeItemIndex==index"
@@ -186,7 +186,7 @@ export default {
         medicalBase: 0,
         accumulationFundPer: 0,
         accumulationFundBase: 0,
-        name: ''
+        name: '默认名称'
       }
     }
   },
@@ -267,7 +267,8 @@ export default {
         medicalPer: 0,
         medicalBase: 0,
         accumulationFundPer: 0,
-        accumulationFundBase: 0
+        accumulationFundBase: 0,
+        name: '默认名称'
       }
       this.dialogTitle = '添加工资账套'
       this.activeItemIndex = 0
