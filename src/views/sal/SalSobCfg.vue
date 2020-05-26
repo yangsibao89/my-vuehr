@@ -50,57 +50,285 @@
           <template slot-scope="scope">
             <el-tooltip
               placement="right"
-              v-if="scope.row.salary"
+              v-if="scope.row.salaryFull"
             >
               <div slot="content">
                 <table>
+                  <!-- 基本工资 -->
                   <tr>
-                    <td>基本工资</td>
-                    <td>{{ scope.row.salary.basicSalary }}</td>
+                    <td>基础工资</td>
+                    <td>{{ scope.row.salaryFull.basicwage }}</td>
                   </tr>
                   <tr>
-                    <td>交通补助</td>
-                    <td>{{ scope.row.salary.trafficSalary }}</td>
+                    <td>工龄工资</td>
+                    <td>{{ scope.row.salaryFull.senioritywage }}</td>
                   </tr>
                   <tr>
-                    <td>午餐补助</td>
-                    <td>{{ scope.row.salary.lunchSalary }}</td>
+                    <td>岗位工资</td>
+                    <td>{{ scope.row.salaryFull.positionwage }}</td>
                   </tr>
+                  <tr>
+                    <td>基础绩效工资</td>
+                    <td>{{ scope.row.salaryFull.performancewage }}</td>
+                  </tr>
+                  <tr>
+                    <td>通讯补贴</td>
+                    <td>{{ scope.row.salaryFull.phoneallowance }}</td>
+                  </tr>
+                  <tr>
+                    <td>交通补贴</td>
+                    <td>{{ scope.row.salaryFull.trafficallowance }}</td>
+                  </tr>
+                  <tr>
+                    <td>注册补发</td>
+                    <td>{{ scope.row.salaryFull.registsupply }}</td>
+                  </tr>
+                  <tr>
+                    <td>租房补贴</td>
+                    <td>{{ scope.row.salaryFull.rentallowance }}</td>
+                  </tr>
+                  <tr>
+                    <td>租房补发</td>
+                    <td>{{ scope.row.salaryFull.rentsupply }}</td>
+                  </tr>
+                  <tr>
+                    <td>独生子女补贴</td>
+                    <td>{{ scope.row.salaryFull.aloneallowance }}</td>
+                  </tr>
+                  <tr>
+                    <td>独生子女补贴补发</td>
+                    <td>{{ scope.row.salaryFull.alonesupply }}</td>
+                  </tr>
+                  <tr>
+                    <td>回民</td>
+                    <td>{{ scope.row.salaryFull.hui }}</td>
+                  </tr>
+                  <tr>
+                    <td>烤火费</td>
+                    <td>{{ scope.row.salaryFull.fire }}</td>
+                  </tr>
+                  <tr>
+                    <td>防暑降温费</td>
+                    <td>{{ scope.row.salaryFull.cool }}</td>
+                  </tr>
+                  <tr>
+                    <td>物业补贴</td>
+                    <td>{{ scope.row.salaryFull.propertyallowance }}</td>
+                  </tr>
+                  <tr>
+                    <td>采暖补贴</td>
+                    <td>{{ scope.row.salaryFull.warmallowance }}</td>
+                  </tr>
+                  <tr>
+                    <td>采暖补贴补发</td>
+                    <td>{{ scope.row.salaryFull.warmsupply }}</td>
+                  </tr>
+                  <tr>
+                    <td>物业补贴补发</td>
+                    <td>{{ scope.row.salaryFull.propertysupply }}</td>
+                  </tr>
+                  <tr>
+                    <td>补发费用</td>
+                    <td>{{ scope.row.salaryFull.supply }}</td>
+                  </tr>
+                  <tr>
+                    <td>扣款</td>
+                    <td>{{ scope.row.salaryFull.deduction }}</td>
+                  </tr>
+                  <tr>
+                    <td>病事假</td>
+                    <td>{{ scope.row.salaryFull.sickpersonalleave }}</td>
+                  </tr>
+                  <tr>
+                    <td>应发合计</td>
+                    <td>{{ scope.row.salaryFull.sum }}</td>
+                  </tr>
+                  <tr>
+                    <td>养老金</td>
+                    <td>{{ scope.row.salaryFull.pension }}</td>
+                  </tr>
+                  <tr>
+                    <td>大额医疗</td>
+                    <td>{{ scope.row.salaryFull.largemedical }}</td>
+                  </tr>
+                  <tr>
+                    <td>职业年金</td>
+                    <td>{{ scope.row.salaryFull.occupationalannuity }}</td>
+                  </tr>
+                  <tr>
+                    <td>公积金</td>
+                    <td>{{ scope.row.salaryFull.provident }}</td>
+                  </tr>
+                  <tr>
+                    <td>补扣职业年金</td>
+                    <td>{{ scope.row.salaryFull.occupationalannuitydecuction }}</td>
+                  </tr>
+                  <tr>
+                    <td>补扣大额医疗</td>
+                    <td>{{ scope.row.salaryFull.largemedicaldeduction }}</td>
+                  </tr>
+                  <tr>
+                    <td>补缴养老金</td>
+                    <td>{{ scope.row.salaryFull.pensionback }}</td>
+                  </tr>
+                  <tr>
+                    <td>补扣保险</td>
+                    <td>{{ scope.row.salaryFull.insurancededuction }}</td>
+                  </tr>
+                  <tr>
+                    <td>扣款合计</td>
+                    <td>{{ scope.row.salaryFull.sumdeduction }}</td>
+                  </tr>
+                  <tr>
+                    <td>补缴公积金</td>
+                    <td>{{ scope.row.salaryFull.providentback }}</td>
+                  </tr>
+                  <tr>
+                    <td>补扣公积金</td>
+                    <td>{{ scope.row.salaryFull.providentdeduction }}</td>
+                  </tr>
+                  <tr>
+                    <td>会员费</td>
+                    <td>{{ scope.row.salaryFull.member }}</td>
+                  </tr>
+                  <tr>
+                    <td>扣个税</td>
+                    <td>{{ scope.row.salaryFull.individual }}</td>
+                  </tr>
+                  <tr>
+                    <td>实发合计</td>
+                    <td>{{ scope.row.salaryFull.actualsum }}</td>
+                  </tr>
+                  <tr>
+                    <td>代发合计</td>
+                    <td>{{ scope.row.salaryFull.agencysum }}</td>
+                  </tr>
+                  <tr>
+                    <td>代扣合计</td>
+                    <td>{{ scope.row.salaryFull.deductionsum }}</td>
+                  </tr>
+                  <tr>
+                    <td>还款</td>
+                    <td>{{ scope.row.salaryFull.repay }}</td>
+                  </tr>
+                  <tr>
+                    <td>实发工资</td>
+                    <td>{{ scope.row.salaryFull.actualwage }}</td>
+                  </tr>
+                  <tr>
+                    <td>补缴补充公积金</td>
+                    <td>{{ scope.row.salaryFull.addprovidentback }}</td>
+                  </tr>
+                  <tr>
+                    <td>应付工资</td>
+                    <td>{{ scope.row.salaryFull.total }}</td>
+                  </tr>
+                  <!-- 保险 -->
+                  <tr>
+                    <td>缴费基数</td>
+                    <td>{{ scope.row.salaryFull.base }}</td>
+                  </tr>
+                  <tr>
+                    <td>养老金个人比率</td>
+                    <td>{{ scope.row.salaryFull.pensionpersonalper }}</td>
+                  </tr>
+                  <tr>
+                    <td>养老金公司比率</td>
+                    <td>{{ scope.row.salaryFull.pensionunitper }}</td>
+                  </tr>
+                  <tr>
+                    <td>养老金合计比率</td>
+                    <td>{{ scope.row.salaryFull.pensionsumper }}</td>
+                  </tr>
+                  <tr>
+                    <td>医疗个人比率</td>
+                    <td>{{ scope.row.salaryFull.medicalpersonalper }}</td>
+                  </tr>
+                  <tr>
+                    <td>医疗单位比率</td>
+                    <td>{{ scope.row.salaryFull.medicalunitper }}</td>
+                  </tr>
+                  <tr>
+                    <td>医疗合计比率</td>
+                    <td>{{ scope.row.salaryFull.medicalsumper }}</td>
+                  </tr>
+                  <tr>
+                    <td>失业个人比率</td>
+                    <td>{{ scope.row.salaryFull.joblesspersonalper }}</td>
+                  </tr>
+                  <tr>
+                    <td>失业单位比率</td>
+                    <td>{{ scope.row.salaryFull.joblessunitper }}</td>
+                  </tr>
+                  <tr>
+                    <td>失业合计比率</td>
+                    <td>{{ scope.row.salaryFull.joblesssumper }}</td>
+                  </tr>
+                  <tr>
+                    <td>工伤保险</td>
+                    <td>{{ scope.row.salaryFull.injury }}</td>
+                  </tr>
+                  <tr>
+                    <td>生育保险</td>
+                    <td>{{ scope.row.salaryFull.birth }}</td>
+                  </tr>
+                  <tr>
+                    <td>个人扣款合计</td>
+                    <td>{{ scope.row.salaryFull.personaldeduction }}</td>
+                  </tr>
+                  <tr>
+                    <td>大额医疗救助</td>
+                    <td>{{ scope.row.salaryFull.ilargemedical }}</td>
+                  </tr>
+                  <tr>
+                    <td>单位扣款合计</td>
+                    <td>{{ scope.row.salaryFull.unitsum }}</td>
+                  </tr>
+                  <tr>
+                    <td>月缴费金额</td>
+                    <td>{{ scope.row.salaryFull.month }}</td>
+                  </tr>
+                  <!-- 公积金 -->
+                  <tr>
+                    <td>缴费基数</td>
+                    <td>{{ scope.row.salaryFull.pbase }}</td>
+                  </tr>
+                  <tr>
+                    <td>缴费比例</td>
+                    <td>{{ scope.row.salaryFull.per }}</td>
+                  </tr>
+                  <tr>
+                    <td>个人</td>
+                    <td>{{ scope.row.salaryFull.personal }}</td>
+                  </tr>
+                  <tr>
+                    <td>单位</td>
+                    <td>{{ scope.row.salaryFull.unit }}</td>
+                  </tr>
+                  <tr>
+                    <td>月缴费合计</td>
+                    <td>{{ scope.row.salaryFull.pmonth }}</td>
+                  </tr>
+                  <tr>
+                    <td>补缴</td>
+                    <td>{{ scope.row.salaryFull.back }}</td>
+                  </tr>
+                  <tr>
+                    <td>合计</td>
+                    <td>{{ scope.row.salaryFull.ptotal }}</td>
+                  </tr>
+                  <!-- 其他 -->
                   <tr>
                     <td>奖金</td>
-                    <td>{{ scope.row.salary.bonus }}</td>
+                    <td>{{ scope.row.salaryFull.bonus }}</td>
                   </tr>
                   <tr>
-                    <td>养老金比率</td>
-                    <td>{{ scope.row.salary.pensionPer }}</td>
-                  </tr>
-                  <tr>
-                    <td>养老金基数</td>
-                    <td>{{ scope.row.salary.pensionBase }}</td>
-                  </tr>
-                  <tr>
-                    <td>医疗保险比率</td>
-                    <td>{{ scope.row.salary.medicalPer }}</td>
-                  </tr>
-                  <tr>
-                    <td>医疗保险基数</td>
-                    <td>{{ scope.row.salary.medicalBase }}</td>
-                  </tr>
-                  <tr>
-                    <td>公积金比率</td>
-                    <td>{{ scope.row.salary.accumulationFundPer }}</td>
-                  </tr>
-                  <tr>
-                    <td>公积金基数</td>
-                    <td>{{ scope.row.salary.accumulationFundBase }}</td>
-                  </tr>
-                  <tr>
-                    <td>启用时间</td>
-                    <td>{{ scope.row.salary.createDate }}</td>
+                    <td>总收入</td>
+                    <td>{{ scope.row.salaryFull.allsalary }}</td>
                   </tr>
                 </table>
               </div>
-              <el-tag>{{ scope.row.salary.name }}</el-tag>
+              <el-tag>{{ scope.row.salaryFull.name }}</el-tag>
             </el-tooltip>
             <el-tag v-else>
               暂未设置
@@ -112,6 +340,9 @@
           align="center"
         >
           <template slot-scope="scope">
+            <el-button @click="show(scope.row)">
+              查看
+            </el-button>
             <el-popover
               placement="left"
               title="修改工资账套"
@@ -175,6 +406,9 @@ export default {
     this.initSalaries()
   },
   methods: {
+    show (data) {
+      console.log(data)
+    },
     sizeChange (size) {
       this.currentSize = size
       this.initEmps()
