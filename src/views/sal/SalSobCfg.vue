@@ -1,6 +1,22 @@
 <template>
   <div>
     <div>
+      <span> 选择月份</span>
+      <el-date-picker
+        type="month"
+        v-model="month"
+      />
+      <el-button
+        type="primary"
+        @click="addMonthSalary"
+      >
+        生成本月工资表
+      </el-button>
+    </div>
+    <div>
+      <div>
+        <span>当前月份套账配置信息</span>
+      </div>
       <el-table
         :data="emps"
         border
@@ -19,12 +35,12 @@
           width="120"
           align="left"
         />
-        <el-table-column
+        <!-- <el-table-column
           prop="workID"
           label="工号"
           width="120"
           align="left"
-        />
+        /> -->
         <el-table-column
           prop="email"
           label="电子邮件"
@@ -346,7 +362,7 @@
             <el-popover
               placement="left"
               title="修改工资账套"
-              @show="showPop(scope.row.salary)"
+              @show="showPop(scope.row.salaryFull)"
               @hide="hidePop(scope.row)"
               width="200"
               trigger="click"
@@ -398,7 +414,9 @@ export default {
       currentPage: 1,
       currentSize: 10,
       currentSalary: null,
-      salaries: []
+      salaries: [],
+      month: '',
+      monthlySalary: {}
     }
   },
   mounted () {
@@ -406,6 +424,20 @@ export default {
     this.initSalaries()
   },
   methods: {
+    addMonthSalary () {
+      this.monthlySalary = {
+        inmonth: this.month,
+        emps: this.emps.filter(emp => {
+          if (emp.id) {
+            // console.log(emp.id)
+            return true
+          }
+        })
+      }
+      this.postRequest('/salary/sobcfg/month', this.monthlySalary).then(resp => {
+        console.log(resp)
+      })
+    },
     show (data) {
       console.log(data)
     },
@@ -444,6 +476,7 @@ export default {
       this.getRequest('/salary/sobcfg/?page=' + this.currentPage + '&size=' + this.currentSize).then(resp => {
         if (resp) {
           this.emps = resp.data
+          // console.log(this.emps)
           this.total = resp.total
         }
       })

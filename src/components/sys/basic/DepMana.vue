@@ -187,7 +187,10 @@ export default {
         }
       })
     },
-    filterNode (value, data) {
+    filterNode (value, data, node) {
+      // console.log(value)
+      // console.log(data)
+      // console.log(node)
       if (!value) return true
       return data.name.indexOf(value) !== -1
     }

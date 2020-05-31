@@ -228,12 +228,12 @@
           label="姓名"
           width="90"
         />
-        <el-table-column
+        <!-- <el-table-column
           prop="workID"
           label="工号"
           align="left"
           width="85"
-        />
+        /> -->
         <el-table-column
           prop="gender"
           label="性别"
@@ -252,11 +252,11 @@
           align="left"
           label="身份证号码"
         />
-        <el-table-column
+        <!-- <el-table-column
           prop="wedlock"
           width="70"
           label="婚姻状况"
-        />
+        /> -->
         <el-table-column
           prop="nation.name"
           width="50"
@@ -283,12 +283,12 @@
           align="left"
           label="电话号码"
         />
-        <el-table-column
+        <!-- <el-table-column
           prop="address"
           width="220"
           align="left"
           label="联系地址"
-        />
+        /> -->
         <el-table-column
           prop="department.name"
           width="100"
@@ -311,36 +311,36 @@
           align="left"
           label="聘用形式"
         />
-        <el-table-column
+        <!-- <el-table-column
           prop="tiptopDegree"
           width="80"
           align="left"
           label="最高学历"
-        />
-        <el-table-column
+        /> -->
+        <!-- <el-table-column
           prop="specialty"
           width="150"
           align="left"
           label="专业"
-        />
-        <el-table-column
+        /> -->
+        <!-- <el-table-column
           prop="school"
           width="150"
           align="left"
           label="毕业院校"
-        />
-        <el-table-column
+        /> -->
+        <!-- <el-table-column
           prop="beginDate"
           width="95"
           align="left"
           label="入职日期"
-        />
-        <el-table-column
+        /> -->
+        <!-- <el-table-column
           prop="conversionTime"
           width="95"
           align="left"
           label="转正日期"
-        />
+        /> -->
         <el-table-column
           prop="beginContract"
           width="95"
@@ -376,13 +376,13 @@
             >
               编辑
             </el-button>
-            <el-button
+            <!-- <el-button
               style="padding: 3px"
               size="mini"
               type="primary"
             >
               查看高级资料
-            </el-button>
+            </el-button> -->
             <el-button
               @click="deleteEmp(scope.row)"
               style="padding: 3px"
@@ -641,7 +641,6 @@
                   prefix-icon="el-icon-edit"
                   v-model="emp.workID"
                   placeholder="工号"
-                  disabled
                 />
               </el-form-item>
             </el-col>
@@ -777,16 +776,22 @@
                 prop="engageForm"
               >
                 <el-radio-group v-model="emp.engageForm">
-                  <el-radio label="劳动合同">
-                    劳动合同
+                  <el-radio label="院编制">
+                    院编制
                   </el-radio>
-                  <el-radio label="劳务合同">
-                    劳务合同
+                  <el-radio label="公司编制">
+                    公司编制
+                  </el-radio>
+                  <el-radio label="北方人才">
+                    北方人才
+                  </el-radio>
+                  <el-radio label="阳升">
+                    阳升
                   </el-radio>
                 </el-radio-group>
               </el-form-item>
             </el-col>
-            <el-col :span="8">
+            <!-- <el-col :span="8">
               <el-form-item
                 label="婚姻状况:"
                 prop="wedlock"
@@ -803,7 +808,7 @@
                   </el-radio>
                 </el-radio-group>
               </el-form-item>
-            </el-col>
+            </el-col> -->
           </el-row>
         </el-form>
       </div>
@@ -855,22 +860,22 @@ export default {
       politicsstatus: [],
       positions: [],
       tiptopDegrees: ['本科', '大专', '硕士', '博士', '高中', '初中', '小学', '其他'],
-      options: [{
-        value: '选项1',
-        label: '黄金糕'
-      }, {
-        value: '选项2',
-        label: '双皮奶'
-      }, {
-        value: '选项3',
-        label: '蚵仔煎'
-      }, {
-        value: '选项4',
-        label: '龙须面'
-      }, {
-        value: '选项5',
-        label: '北京烤鸭'
-      }],
+      // options: [{
+      //   value: '选项1',
+      //   label: '黄金糕'
+      // }, {
+      //   value: '选项2',
+      //   label: '双皮奶'
+      // }, {
+      //   value: '选项3',
+      //   label: '蚵仔煎'
+      // }, {
+      //   value: '选项4',
+      //   label: '龙须面'
+      // }, {
+      //   value: '选项5',
+      //   label: '北京烤鸭'
+      // }],
       inputDepName: '所属部门',
       emp: {
         name: 'javaboy',
@@ -906,41 +911,41 @@ export default {
         label: 'name'
       },
       rules: {
-        name: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-        gender: [{ required: true, message: '请输入性别', trigger: 'blur' }],
-        birthday: [{ required: true, message: '请输入出生日期', trigger: 'blur' }],
-        idCard: [{ required: true, message: '请输入身份证号码', trigger: 'blur' }, {
-          pattern: /(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}$)/,
-          message: '身份证号码格式不正确',
-          trigger: 'blur'
-        }],
-        wedlock: [{ required: true, message: '请输入婚姻状况', trigger: 'blur' }],
-        nationId: [{ required: true, message: '请输入您组', trigger: 'blur' }],
+        // name: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+        // gender: [{ required: true, message: '请输入性别', trigger: 'blur' }],
+        // birthday: [{ required: true, message: '请输入出生日期', trigger: 'blur' }],
+        // idCard: [{ required: true, message: '请输入身份证号码', trigger: 'blur' }, {
+        //   pattern: /(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}$)/,
+        //   message: '身份证号码格式不正确',
+        //   trigger: 'blur'
+        // }],
+        // wedlock: [{ required: true, message: '请输入婚姻状况', trigger: 'blur' }],
+        nationId: [{ required: true, message: '请输入您的民族', trigger: 'blur' }],
         nativePlace: [{ required: true, message: '请输入籍贯', trigger: 'blur' }],
         politicId: [{ required: true, message: '请输入政治面貌', trigger: 'blur' }],
-        email: [{ required: true, message: '请输入邮箱地址', trigger: 'blur' }, {
-          type: 'email',
-          message: '邮箱格式不正确',
-          trigger: 'blur'
-        }],
+        // email: [{ required: true, message: '请输入邮箱地址', trigger: 'blur' }, {
+        //   type: 'email',
+        //   message: '邮箱格式不正确',
+        //   trigger: 'blur'
+        // }],
         phone: [{ required: true, message: '请输入电话号码', trigger: 'blur' }],
-        address: [{ required: true, message: '请输入员工地址', trigger: 'blur' }],
+        // address: [{ required: true, message: '请输入员工地址', trigger: 'blur' }],
         departmentId: [{ required: true, message: '请输入部门名称', trigger: 'blur' }],
         jobLevelId: [{ required: true, message: '请输入职称', trigger: 'blur' }],
         posId: [{ required: true, message: '请输入职位', trigger: 'blur' }],
         engageForm: [{ required: true, message: '请输入聘用形式', trigger: 'blur' }],
-        tiptopDegree: [{ required: true, message: '请输入学历', trigger: 'blur' }],
-        specialty: [{ required: true, message: '请输入专业', trigger: 'blur' }],
-        school: [{ required: true, message: '请输入毕业院校', trigger: 'blur' }],
-        beginDate: [{ required: true, message: '请输入入职日期', trigger: 'blur' }],
-        workState: [{ required: true, message: '请输入工作状态', trigger: 'blur' }],
-        workID: [{ required: true, message: '请输入工号', trigger: 'blur' }],
-        contractTerm: [{ required: true, message: '请输入合同期限', trigger: 'blur' }],
-        conversionTime: [{ required: true, message: '请输入转正日期', trigger: 'blur' }],
-        notworkDate: [{ required: true, message: '请输入离职日期', trigger: 'blur' }],
+        // tiptopDegree: [{ required: true, message: '请输入学历', trigger: 'blur' }],
+        // specialty: [{ required: true, message: '请输入专业', trigger: 'blur' }],
+        // school: [{ required: true, message: '请输入毕业院校', trigger: 'blur' }],
+        // beginDate: [{ required: true, message: '请输入入职日期', trigger: 'blur' }],
+        // workState: [{ required: true, message: '请输入工作状态', trigger: 'blur' }],
+        // workID: [{ required: true, message: '请输入工号', trigger: 'blur' }],
+        // contractTerm: [{ required: true, message: '请输入合同期限', trigger: 'blur' }],
+        // conversionTime: [{ required: true, message: '请输入转正日期', trigger: 'blur' }],
+        // notworkDate: [{ required: true, message: '请输入离职日期', trigger: 'blur' }],
         beginContract: [{ required: true, message: '请输入合同起始日期', trigger: 'blur' }],
-        endContract: [{ required: true, message: '请输入合同结束日期', trigger: 'blur' }],
-        workAge: [{ required: true, message: '请输入工龄', trigger: 'blur' }]
+        endContract: [{ required: true, message: '请输入合同结束日期', trigger: 'blur' }]
+        // workAge: [{ required: true, message: '请输入工龄', trigger: 'blur' }]
       }
     }
   },
@@ -1033,6 +1038,7 @@ export default {
     },
     doAddEmp () {
       if (this.emp.id) {
+        console.log(this.emp.id)
         this.$refs.empForm.validate(valid => {
           if (valid) {
             this.putRequest('/employee/basic/', this.emp).then(resp => {
@@ -1046,6 +1052,7 @@ export default {
       } else {
         this.$refs.empForm.validate(valid => {
           if (valid) {
+            console.log(this.emp)
             this.postRequest('/employee/basic/', this.emp).then(resp => {
               if (resp) {
                 this.dialogVisible = false
@@ -1056,7 +1063,10 @@ export default {
         })
       }
     },
-    handleNodeClick (data) {
+    handleNodeClick (data, node, self) {
+      console.log(data)
+      console.log(node)
+      console.log(self)
       this.inputDepName = data.name
       this.emp.departmentId = data.id
       this.popVisible = !this.popVisible

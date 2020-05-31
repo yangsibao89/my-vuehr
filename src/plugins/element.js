@@ -6,7 +6,7 @@ import {
   MenuItem, Breadcrumb, BreadcrumbItem, Card, Upload,
   Tag, Dialog, Col, Row, Select, RadioGroup, Radio, Popover,
   Tree, DatePicker, Table, TableColumn, Pagination, Option, Tabs,
-  TabPane, Collapse, CollapseItem, Icon, Switch, Step, Steps, Tooltip
+  TabPane, Collapse, CollapseItem, Icon, Switch, Step, Steps, Tooltip, TimePicker
 } from 'element-ui'
 
 Vue.use(Button)
@@ -53,6 +53,7 @@ Vue.use(Switch)
 Vue.use(Step)
 Vue.use(Steps)
 Vue.use(Tooltip)
+Vue.use(TimePicker)
 /* 不要use，use了每个页面都蹦 */
 // Vue.use(Message)
 // Vue.use(MessageBox)
